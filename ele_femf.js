@@ -4,7 +4,7 @@
  * 2023.8.9 更新：首次发布；
  */
 
-const $ = new Env('枫叶_饿了么福尔魔方');
+const $ = new Env("枫叶_饿了么福尔魔方");
 
 const {
     validateCarmeWithType: _0x4cfa40,
@@ -16,7 +16,7 @@ const {
     sign,
     getToken,
     checkCk,
-    tryCatchPromise
+    tryCatchPromise,
   } = require("./common.js"),
   request = require("request"),
   _0x57253e = process.env.ELE_CARME,
@@ -30,7 +30,8 @@ async function h5Req(_0x435d5d, _0x5231fc) {
       "content-type": "application/x-www-form-urlencoded",
       origin: "https://r.ele.me",
       pragma: "no-cache",
-      referer: "https://r.ele.me/linkgame/index.html?navType=3&spm-pre=a2ogi.13162730.zebra-ele-login-module-9089118186&spm=a13.b_activity_kb_m71293.0.0",
+      referer:
+        "https://r.ele.me/linkgame/index.html?navType=3&spm-pre=a2ogi.13162730.zebra-ele-login-module-9089118186&spm=a13.b_activity_kb_m71293.0.0",
       cookie: _0x435d5d,
       //"x-ele-ua": "RenderWay/H5 AppName/wap Mozilla/5.0 (Linux; Android 8.0.0; SM-G955U Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Mobile Safari/537.36",
       //"user-agent": "Mozilla/5.0 (Linux; Android 8.0.0; SM-G955U Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Mobile Safari/537.36"
@@ -40,14 +41,28 @@ async function h5Req(_0x435d5d, _0x5231fc) {
   var _0x262d46 = "data=" + encodeURIComponent(JSON.stringify(_0x5231fc));
   const _0x3d0021 = getToken(_0x435d5d),
     _0x15dbe5 = _0x3d0021.split("_")[0],
-    _0x4c2b9e = await sign(_0x15dbe5 + "&" + _0x395caf + "&" + _0xc3123 + "&" + JSON.stringify(_0x5231fc), process.env.ELE_CARME),
+    _0x4c2b9e = await sign(
+      _0x15dbe5 +
+        "&" +
+        _0x395caf +
+        "&" +
+        _0xc3123 +
+        "&" +
+        JSON.stringify(_0x5231fc),
+      process.env.ELE_CARME
+    ),
     _0xb036ce = {
-      url: "https://shopping.ele.me/h5/mtop.koubei.interactioncenter.platform.right.lottery/1.0/?jsv=2.6.1&appKey=12574478&t=" + _0x395caf + "&sign=" + _0x4c2b9e + "&api=mtop.koubei.interactioncenter.platform.right.lottery&v=1.0&type=originaljson&dataType=json&timeout=5000&subDomain=shopping&mainDomain=ele.me&H5Request=true&pageDomain=ele.me&ttid=h5%40chrome_android_87.0.4280.141&SV=5.0",
+      url:
+        "https://shopping.ele.me/h5/mtop.koubei.interactioncenter.platform.right.lottery/1.0/?jsv=2.6.1&appKey=12574478&t=" +
+        _0x395caf +
+        "&sign=" +
+        _0x4c2b9e +
+        "&api=mtop.koubei.interactioncenter.platform.right.lottery&v=1.0&type=originaljson&dataType=json&timeout=5000&subDomain=shopping&mainDomain=ele.me&H5Request=true&pageDomain=ele.me&ttid=h5%40chrome_android_87.0.4280.141&SV=5.0",
       method: "POST",
       headers: _0x9519bd,
-      body: _0x262d46
+      body: _0x262d46,
     };
-  return tryCatchPromise(_0x2a583b => {
+  return tryCatchPromise((_0x2a583b) => {
     request(_0xb036ce, (_0x50c447, _0x3d3170, _0x300d49) => {
       _0x2a583b(JSON.parse(_0x300d49));
     });
@@ -60,19 +75,21 @@ async function initEnv(_0x22eacf, _0x47cef2, _0x48ccf4) {
       url: process.env.HOST + "/check/getumtid",
       headers: {
         "user-agent": "Apifox/1.0.0 (imsb)",
-        "content-type": "application/json"
+        "content-type": "application/json",
       },
       body: JSON.stringify({
         carmi: _0xa1af4f,
         latitude: _0x47cef2,
-        longitude: _0x48ccf4
-      })
+        longitude: _0x48ccf4,
+      }),
     };
-  return tryCatchPromise(_0xdd0ccd => {
+  return tryCatchPromise((_0xdd0ccd) => {
     request(_0x1b31ad, async (_0x135abe, _0x20c566, _0x5661a4) => {
       if (!_0x135abe && _0x20c566.statusCode === 200) {
         _0x5661a4 = JSON.parse(_0x5661a4);
-        _0x5661a4.code === 20000 ? _0xdd0ccd(_0x5661a4.data) : (console.log(_0x5661a4.message), _0xdd0ccd());
+        _0x5661a4.code === 20000
+          ? _0xdd0ccd(_0x5661a4.data)
+          : (console.log(_0x5661a4.message), _0xdd0ccd());
       } else {
         console.log(_0x135abe || _0x5661a4);
         _0xdd0ccd();
@@ -98,11 +115,12 @@ async function _0x109797(_0x59c2bc, _0x44a872) {
       actId: "20230802212526123181213864",
       collectionId: "20230802212526148986536967",
       componentId: "20230803112141370370827352",
-      extParams: "{\\\"actId\\\":\\\"20230802212526123181213864\\\",\\\"bizScene\\\":\\\"MAGIC_CUBE\\\",\\\"desc\\\":\\\"魔方消消乐\\\"}",
+      extParams:
+        '{\\"actId\\":\\"20230802212526123181213864\\",\\"bizScene\\":\\"MAGIC_CUBE\\",\\"desc\\":\\"魔方消消乐\\"}',
       requestId: "20230802212526123181213864" + _0x182bf2 + "",
       //ua: _0x1f9588,
       //umidToken: _0x2ce074,
-      asac: "2A22C0239QW1FOL3UUQY7U"
+      asac: "2A22C0239QW1FOL3UUQY7U",
     };
   try {
     const _0x445d66 = await h5Req(_0x59c2bc, _0x401a77);
@@ -110,7 +128,8 @@ async function _0x109797(_0x59c2bc, _0x44a872) {
       console.log(_0x445d66.data.data.errorMsg);
       return false;
     } else {
-      const _0x282c4a = _0x445d66.data.data.sendRightList[0].discountInfo.amount;
+      const _0x282c4a =
+        _0x445d66.data.data.sendRightList[0].discountInfo.amount;
       console.log("福尔魔方闯关成功。获得：" + _0x282c4a, "乐园币");
       return _0x282c4a !== 1;
     }
@@ -126,10 +145,6 @@ async function _0x12d072() {
       //_0x2dd844 = await _0x4a4a5b(_0x24b3c4, _0x1c5d9a),
       _0x460a66 = await checkCk(_0x24b3c4, _0x5c83c6, process.env.ELE_CARME);
 
-    
-
-   
-    
     await _0x109797(_0x460a66);
     console.log("防止挤爆了，延时 1 秒");
     await _0x5ad5ca(1);
@@ -138,15 +153,20 @@ async function _0x12d072() {
 }
 _0x12d072();
 function Env(t, e) {
-  "undefined" != typeof process && JSON.stringify(process.env).indexOf("GITHUB") > -1 && process.exit(0);
+  "undefined" != typeof process &&
+    JSON.stringify(process.env).indexOf("GITHUB") > -1 &&
+    process.exit(0);
   class s {
     constructor(t) {
       this.env = t;
     }
     send(t, e = "GET") {
-      t = "string" == typeof t ? {
-        url: t
-      } : t;
+      t =
+        "string" == typeof t
+          ? {
+              url: t,
+            }
+          : t;
       let s = this.get;
       "POST" === e && (s = this.post);
       return new Promise((e, i) => {
@@ -162,7 +182,7 @@ function Env(t, e) {
       return this.send.call(this.env, t, "POST");
     }
   }
-  return new class {
+  return new (class {
     constructor(t, e) {
       this.name = t;
       this.http = new s(this);
@@ -220,14 +240,17 @@ function Env(t, e) {
       }
     }
     getScript(t) {
-      return new Promise(e => {
-        this.get({
-          url: t
-        }, (t, s, i) => e(i));
+      return new Promise((e) => {
+        this.get(
+          {
+            url: t,
+          },
+          (t, s, i) => e(i)
+        );
       });
     }
     runScript(t, e) {
-      return new Promise(s => {
+      return new Promise((s) => {
         let i = this.getdata("@chavy_boxjs_userCfgs.httpapi");
         i = i ? i.replace(/\n/g, "").trim() : i;
         let r = this.getdata("@chavy_boxjs_userCfgs.httpapi_timeout");
@@ -239,15 +262,15 @@ function Env(t, e) {
             body: {
               script_text: t,
               mock_type: "cron",
-              timeout: r
+              timeout: r,
             },
             headers: {
               "X-Key": o,
-              Accept: "*/*"
-            }
+              Accept: "*/*",
+            },
           };
         this.post(n, (t, e, i) => s(i));
-      }).catch(t => this.logErr(t));
+      }).catch((t) => this.logErr(t));
     }
     loaddata() {
       if (!this.isNode()) {
@@ -282,19 +305,36 @@ function Env(t, e) {
           s = this.fs.existsSync(t),
           i = !s && this.fs.existsSync(e),
           r = JSON.stringify(this.data);
-        s ? this.fs.writeFileSync(t, r) : i ? this.fs.writeFileSync(e, r) : this.fs.writeFileSync(t, r);
+        s
+          ? this.fs.writeFileSync(t, r)
+          : i
+          ? this.fs.writeFileSync(e, r)
+          : this.fs.writeFileSync(t, r);
       }
     }
     lodash_get(t, e, s) {
       const i = e.replace(/\[(\d+)\]/g, ".$1").split(".");
       let r = t;
-      for (const t of i) if (r = Object(r)[t], void 0 === r) {
-        return s;
-      }
+      for (const t of i)
+        if (((r = Object(r)[t]), void 0 === r)) {
+          return s;
+        }
       return r;
     }
     lodash_set(t, e, s) {
-      return Object(t) !== t ? t : (Array.isArray(e) || (e = e.toString().match(/[^.[\]]+/g) || []), e.slice(0, -1).reduce((t, s, i) => Object(t[s]) === t[s] ? t[s] : t[s] = Math.abs(e[i + 1]) >> 0 == +e[i + 1] ? [] : {}, t)[e[e.length - 1]] = s, t);
+      return Object(t) !== t
+        ? t
+        : (Array.isArray(e) || (e = e.toString().match(/[^.[\]]+/g) || []),
+          (e
+            .slice(0, -1)
+            .reduce(
+              (t, s, i) =>
+                Object(t[s]) === t[s]
+                  ? t[s]
+                  : (t[s] = Math.abs(e[i + 1]) >> 0 == +e[i + 1] ? [] : {}),
+              t
+            )[e[e.length - 1]] = s),
+          t);
     }
     getdata(t) {
       let e = this.getval(t);
@@ -317,7 +357,7 @@ function Env(t, e) {
       if (/^@/.test(e)) {
         const [, i, r] = /^@(.*?)\.(.*?)$/.exec(e),
           o = this.getval(i),
-          h = i ? "null" === o ? null : o || "{}" : "{}";
+          h = i ? ("null" === o ? null : o || "{}") : "{}";
         try {
           const e = JSON.parse(h);
           this.lodash_set(e, r, t);
@@ -333,126 +373,174 @@ function Env(t, e) {
       return s;
     }
     getval(t) {
-      return this.isSurge() || this.isLoon() ? $persistentStore.read(t) : this.isQuanX() ? $prefs.valueForKey(t) : this.isNode() ? (this.data = this.loaddata(), this.data[t]) : this.data && this.data[t] || null;
+      return this.isSurge() || this.isLoon()
+        ? $persistentStore.read(t)
+        : this.isQuanX()
+        ? $prefs.valueForKey(t)
+        : this.isNode()
+        ? ((this.data = this.loaddata()), this.data[t])
+        : (this.data && this.data[t]) || null;
     }
     setval(t, e) {
-      return this.isSurge() || this.isLoon() ? $persistentStore.write(t, e) : this.isQuanX() ? $prefs.setValueForKey(t, e) : this.isNode() ? (this.data = this.loaddata(), this.data[e] = t, this.writedata(), !0) : this.data && this.data[e] || null;
+      return this.isSurge() || this.isLoon()
+        ? $persistentStore.write(t, e)
+        : this.isQuanX()
+        ? $prefs.setValueForKey(t, e)
+        : this.isNode()
+        ? ((this.data = this.loaddata()),
+          (this.data[e] = t),
+          this.writedata(),
+          !0)
+        : (this.data && this.data[e]) || null;
     }
     initGotEnv(t) {
       this.got = this.got ? this.got : require("got");
       this.cktough = this.cktough ? this.cktough : require("tough-cookie");
       this.ckjar = this.ckjar ? this.ckjar : new this.cktough.CookieJar();
-      t && (t.headers = t.headers ? t.headers : {}, void 0 === t.headers.Cookie && void 0 === t.cookieJar && (t.cookieJar = this.ckjar));
+      t &&
+        ((t.headers = t.headers ? t.headers : {}),
+        void 0 === t.headers.Cookie &&
+          void 0 === t.cookieJar &&
+          (t.cookieJar = this.ckjar));
     }
     get(t, e = () => {}) {
-      t.headers && (delete t.headers["Content-Type"], delete t.headers["Content-Length"]);
-      this.isSurge() || this.isLoon() ? (this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {}, Object.assign(t.headers, {
-        "X-Surge-Skip-Scripting": !1
-      })), $httpClient.get(t, (t, s, i) => {
-        !t && s && (s.body = i, s.statusCode = s.status);
-        e(t, s, i);
-      })) : this.isQuanX() ? (this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, {
-        hints: !1
-      })), $task.fetch(t).then(t => {
-        const {
-          statusCode: s,
-          statusCode: i,
-          headers: r,
-          body: o
-        } = t;
-        e(null, {
-          status: s,
-          statusCode: i,
-          headers: r,
-          body: o
-        }, o);
-      }, t => e(t))) : this.isNode() && (this.initGotEnv(t), this.got(t).on("redirect", (t, e) => {
-        try {
-          if (t.headers["set-cookie"]) {
-            const s = t.headers["set-cookie"].map(this.cktough.Cookie.parse).toString();
-            s && this.ckjar.setCookieSync(s, null);
-            e.cookieJar = this.ckjar;
-          }
-        } catch (t) {
-          this.logErr(t);
-        }
-      }).then(t => {
-        const {
-          statusCode: s,
-          statusCode: i,
-          headers: r,
-          body: o
-        } = t;
-        e(null, {
-          status: s,
-          statusCode: i,
-          headers: r,
-          body: o
-        }, o);
-      }, t => {
-        const {
-          message: s,
-          response: i
-        } = t;
-        e(s, i, i && i.body);
-      }));
+      t.headers &&
+        (delete t.headers["Content-Type"], delete t.headers["Content-Length"]);
+      this.isSurge() || this.isLoon()
+        ? (this.isSurge() &&
+            this.isNeedRewrite &&
+            ((t.headers = t.headers || {}),
+            Object.assign(t.headers, {
+              "X-Surge-Skip-Scripting": !1,
+            })),
+          $httpClient.get(t, (t, s, i) => {
+            !t && s && ((s.body = i), (s.statusCode = s.status));
+            e(t, s, i);
+          }))
+        : this.isQuanX()
+        ? (this.isNeedRewrite &&
+            ((t.opts = t.opts || {}),
+            Object.assign(t.opts, {
+              hints: !1,
+            })),
+          $task.fetch(t).then(
+            (t) => {
+              const { statusCode: s, statusCode: i, headers: r, body: o } = t;
+              e(
+                null,
+                {
+                  status: s,
+                  statusCode: i,
+                  headers: r,
+                  body: o,
+                },
+                o
+              );
+            },
+            (t) => e(t)
+          ))
+        : this.isNode() &&
+          (this.initGotEnv(t),
+          this.got(t)
+            .on("redirect", (t, e) => {
+              try {
+                if (t.headers["set-cookie"]) {
+                  const s = t.headers["set-cookie"]
+                    .map(this.cktough.Cookie.parse)
+                    .toString();
+                  s && this.ckjar.setCookieSync(s, null);
+                  e.cookieJar = this.ckjar;
+                }
+              } catch (t) {
+                this.logErr(t);
+              }
+            })
+            .then(
+              (t) => {
+                const { statusCode: s, statusCode: i, headers: r, body: o } = t;
+                e(
+                  null,
+                  {
+                    status: s,
+                    statusCode: i,
+                    headers: r,
+                    body: o,
+                  },
+                  o
+                );
+              },
+              (t) => {
+                const { message: s, response: i } = t;
+                e(s, i, i && i.body);
+              }
+            ));
     }
     post(t, e = () => {}) {
-      if (t.body && t.headers && !t.headers["Content-Type"] && (t.headers["Content-Type"] = "application/x-www-form-urlencoded"), t.headers && delete t.headers["Content-Length"], this.isSurge() || this.isLoon()) {
-        this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {}, Object.assign(t.headers, {
-          "X-Surge-Skip-Scripting": !1
-        }));
+      if (
+        (t.body &&
+          t.headers &&
+          !t.headers["Content-Type"] &&
+          (t.headers["Content-Type"] = "application/x-www-form-urlencoded"),
+        t.headers && delete t.headers["Content-Length"],
+        this.isSurge() || this.isLoon())
+      ) {
+        this.isSurge() &&
+          this.isNeedRewrite &&
+          ((t.headers = t.headers || {}),
+          Object.assign(t.headers, {
+            "X-Surge-Skip-Scripting": !1,
+          }));
         $httpClient.post(t, (t, s, i) => {
-          !t && s && (s.body = i, s.statusCode = s.status);
+          !t && s && ((s.body = i), (s.statusCode = s.status));
           e(t, s, i);
         });
       } else {
         if (this.isQuanX()) {
           t.method = "POST";
-          this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, {
-            hints: !1
-          }));
-          $task.fetch(t).then(t => {
-            const {
-              statusCode: s,
-              statusCode: i,
-              headers: r,
-              body: o
-            } = t;
-            e(null, {
-              status: s,
-              statusCode: i,
-              headers: r,
-              body: o
-            }, o);
-          }, t => e(t));
+          this.isNeedRewrite &&
+            ((t.opts = t.opts || {}),
+            Object.assign(t.opts, {
+              hints: !1,
+            }));
+          $task.fetch(t).then(
+            (t) => {
+              const { statusCode: s, statusCode: i, headers: r, body: o } = t;
+              e(
+                null,
+                {
+                  status: s,
+                  statusCode: i,
+                  headers: r,
+                  body: o,
+                },
+                o
+              );
+            },
+            (t) => e(t)
+          );
         } else {
           if (this.isNode()) {
             this.initGotEnv(t);
-            const {
-              url: s,
-              ...i
-            } = t;
-            this.got.post(s, i).then(t => {
-              const {
-                statusCode: s,
-                statusCode: i,
-                headers: r,
-                body: o
-              } = t;
-              e(null, {
-                status: s,
-                statusCode: i,
-                headers: r,
-                body: o
-              }, o);
-            }, t => {
-              const {
-                message: s,
-                response: i
-              } = t;
-              e(s, i, i && i.body);
-            });
+            const { url: s, ...i } = t;
+            this.got.post(s, i).then(
+              (t) => {
+                const { statusCode: s, statusCode: i, headers: r, body: o } = t;
+                e(
+                  null,
+                  {
+                    status: s,
+                    statusCode: i,
+                    headers: r,
+                    body: o,
+                  },
+                  o
+                );
+              },
+              (t) => {
+                const { message: s, response: i } = t;
+                e(s, i, i && i.body);
+              }
+            );
           }
         }
       }
@@ -466,23 +554,40 @@ function Env(t, e) {
         "m+": s.getMinutes(),
         "s+": s.getSeconds(),
         "q+": Math.floor((s.getMonth() + 3) / 3),
-        S: s.getMilliseconds()
+        S: s.getMilliseconds(),
       };
-      /(y+)/.test(t) && (t = t.replace(RegExp.$1, (s.getFullYear() + "").substr(4 - RegExp.$1.length)));
-      for (let e in i) new RegExp("(" + e + ")").test(t) && (t = t.replace(RegExp.$1, 1 == RegExp.$1.length ? i[e] : ("00" + i[e]).substr(("" + i[e]).length)));
+      /(y+)/.test(t) &&
+        (t = t.replace(
+          RegExp.$1,
+          (s.getFullYear() + "").substr(4 - RegExp.$1.length)
+        ));
+      for (let e in i)
+        new RegExp("(" + e + ")").test(t) &&
+          (t = t.replace(
+            RegExp.$1,
+            1 == RegExp.$1.length
+              ? i[e]
+              : ("00" + i[e]).substr(("" + i[e]).length)
+          ));
       return t;
     }
     msg(e = t, s = "", i = "", r) {
-      const o = t => {
+      const o = (t) => {
         if (!t) {
           return t;
         }
         if ("string" == typeof t) {
-          return this.isLoon() ? t : this.isQuanX() ? {
-            "open-url": t
-          } : this.isSurge() ? {
-            url: t
-          } : void 0;
+          return this.isLoon()
+            ? t
+            : this.isQuanX()
+            ? {
+                "open-url": t,
+              }
+            : this.isSurge()
+            ? {
+                url: t,
+              }
+            : void 0;
         }
         if ("object" == typeof t) {
           if (this.isLoon()) {
@@ -490,7 +595,7 @@ function Env(t, e) {
               s = t.mediaUrl || t["media-url"];
             return {
               openUrl: e,
-              mediaUrl: s
+              mediaUrl: s,
             };
           }
           if (this.isQuanX()) {
@@ -498,18 +603,24 @@ function Env(t, e) {
               s = t["media-url"] || t.mediaUrl;
             return {
               "open-url": e,
-              "media-url": s
+              "media-url": s,
             };
           }
           if (this.isSurge()) {
             let e = t.url || t.openUrl || t["open-url"];
             return {
-              url: e
+              url: e,
             };
           }
         }
       };
-      if (this.isMute || (this.isSurge() || this.isLoon() ? $notification.post(e, s, i, o(r)) : this.isQuanX() && $notify(e, s, i, o(r))), !this.isMuteLog) {
+      if (
+        (this.isMute ||
+          (this.isSurge() || this.isLoon()
+            ? $notification.post(e, s, i, o(r))
+            : this.isQuanX() && $notify(e, s, i, o(r))),
+        !this.isMuteLog)
+      ) {
         let t = ["", "==============??系统通知??=============="];
         t.push(e);
         s && t.push(s);
@@ -524,10 +635,12 @@ function Env(t, e) {
     }
     logErr(t, e) {
       const s = !this.isSurge() && !this.isQuanX() && !this.isLoon();
-      s ? this.log("", `??${this.name}, 错误!`, t.stack) : this.log("", `??${this.name}, 错误!`, t);
+      s
+        ? this.log("", `??${this.name}, 错误!`, t.stack)
+        : this.log("", `??${this.name}, 错误!`, t);
     }
     wait(t) {
-      return new Promise(e => setTimeout(e, t));
+      return new Promise((e) => setTimeout(e, t));
     }
     done(t = {}) {
       const e = new Date().getTime(),
@@ -536,5 +649,5 @@ function Env(t, e) {
       this.log();
       (this.isSurge() || this.isQuanX() || this.isLoon()) && $done(t);
     }
-  }(t, e);
+  })(t, e);
 }

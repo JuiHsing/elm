@@ -4,15 +4,15 @@
  * 需要手动玩到四级才能跑
  */
 
-const $ = new Env('饿了么梦幻小院');
+const $ = new Env("饿了么梦幻小院");
 
 const {
-  "getToken": getToken,
-  "tryCatchPromise": tryCatchPromise,
-  "getCookies": getCookies,
-  "checkCk": checkCk,
-  "getUserInfo": getUserInfo,
-  "wait": wait
+  getToken: getToken,
+  tryCatchPromise: tryCatchPromise,
+  getCookies: getCookies,
+  checkCk: checkCk,
+  getUserInfo: getUserInfo,
+  wait: wait,
 } = require("./common.js");
 const _0xd960c1 = require("request");
 const md5 = require("md5");
@@ -20,24 +20,38 @@ let _0x244760 = 1;
 let _0x22b780;
 async function _0x1d5d09(_0x37366f) {
   const _0x309187 = {
-    "bizScene": "ELEME_ELMYLY",
-    "instance": "INNER"
+    bizScene: "ELEME_ELMYLY",
+    instance: "INNER",
   };
-  let _0x495e7d = await _0x768dee("mtop.alsc.playgame.common.real.name.authentication", _0x37366f, _0x309187);
+  let _0x495e7d = await _0x768dee(
+    "mtop.alsc.playgame.common.real.name.authentication",
+    _0x37366f,
+    _0x309187
+  );
   return _0x495e7d["authentication"];
 }
 async function _0x2eb09b(_0x4dbdaf) {
   const _0x1851a7 = new Date()["getTime"]();
   const _0x34e39f = {
-    "body": "{\"nickname\":\"普通玩家\",\"avatar\":\"998d3ad143b581e8f2a3866c1f8a783cjpeg\",\"inviterId\":\"\",\"inviterType\":0,\"shareTime\":0,\"debug\":null,\"reqIdx\":" + _0x244760 + ",\"targetServer\":\"onlineB\",\"clientVersion\":\"v1.0.4\"}",
-    "headers": "{\"content-type\":\"application/json;charset=UTF-8\"}",
-    "instance": "INNER",
-    "method": "POST",
-    "options": "{\"cloudAppId\":\"47442\",\"timeout\":3000}",
-    "path": "/api/role/login",
-    "protocols": "{\"Content-Type\":\"application/json\",\"mc-timestamp\":\"" + _0x1851a7 + "\",\"mc-env\":\"online\",\"mc-network\":\"WIFI\"}"
+    body:
+      '{"nickname":"普通玩家","avatar":"998d3ad143b581e8f2a3866c1f8a783cjpeg","inviterId":"","inviterType":0,"shareTime":0,"debug":null,"reqIdx":' +
+      _0x244760 +
+      ',"targetServer":"onlineB","clientVersion":"v1.0.4"}',
+    headers: '{"content-type":"application/json;charset=UTF-8"}',
+    instance: "INNER",
+    method: "POST",
+    options: '{"cloudAppId":"47442","timeout":3000}',
+    path: "/api/role/login",
+    protocols:
+      '{"Content-Type":"application/json","mc-timestamp":"' +
+      _0x1851a7 +
+      '","mc-env":"online","mc-network":"WIFI"}',
   };
-  let _0x4f8b6c = await _0x768dee("mtop.miniapp.cloud.application.request", _0x4dbdaf, _0x34e39f);
+  let _0x4f8b6c = await _0x768dee(
+    "mtop.miniapp.cloud.application.request",
+    _0x4dbdaf,
+    _0x34e39f
+  );
   if (_0x4f8b6c) {
     return _0x4f8b6c["data"];
   }
@@ -47,29 +61,71 @@ async function _0xe6e63a(_0x3659dc) {
   const _0x239196 = new Date()["getTime"]();
   _0x244760++;
   const _0x4411d4 = {
-    "body": "{\"reqIdx\":" + _0x244760 + ",\"gameId\":\"" + _0x1b7a8d + "\",\"token\":\"" + _0x35bf66 + "\",\"targetServer\":\"onlineB\",\"clientVersion\":\"v1.0.4\"}",
-    "headers": "{\"content-type\":\"application/json;charset=UTF-8\"}",
-    "instance": "INNER",
-    "method": "POST",
-    "options": "{\"cloudAppId\":\"47442\",\"timeout\":3000}",
-    "path": "/onlineB/api/game/getAllOpenActivityInfo",
-    "protocols": "{\"Content-Type\":\"application/json\",\"mc-timestamp\":\"" + _0x239196 + "\",\"mc-env\":\"online\",\"mc-network\":\"WIFI\"}"
+    body:
+      '{"reqIdx":' +
+      _0x244760 +
+      ',"gameId":"' +
+      _0x1b7a8d +
+      '","token":"' +
+      _0x35bf66 +
+      '","targetServer":"onlineB","clientVersion":"v1.0.4"}',
+    headers: '{"content-type":"application/json;charset=UTF-8"}',
+    instance: "INNER",
+    method: "POST",
+    options: '{"cloudAppId":"47442","timeout":3000}',
+    path: "/onlineB/api/game/getAllOpenActivityInfo",
+    protocols:
+      '{"Content-Type":"application/json","mc-timestamp":"' +
+      _0x239196 +
+      '","mc-env":"online","mc-network":"WIFI"}',
   };
-  return await _0x768dee("mtop.miniapp.cloud.application.request", _0x3659dc, _0x4411d4);
+  return await _0x768dee(
+    "mtop.miniapp.cloud.application.request",
+    _0x3659dc,
+    _0x4411d4
+  );
 }
-async function _0x54ec17(_0x27230d, _0x115188, _0x59c4d3, _0x1a1549 = 1014, _0x244913) {
+async function _0x54ec17(
+  _0x27230d,
+  _0x115188,
+  _0x59c4d3,
+  _0x1a1549 = 1014,
+  _0x244913
+) {
   const _0x1b43f3 = new Date()["getTime"]();
   _0x244760++;
   const _0x5ecf44 = {
-    "body": "{\"orderQueryId\":\"" + _0x115188 + "\",\"posArray\":" + JSON["stringify"](_0x59c4d3) + ",\"customerId\":\"" + _0x1a1549 + "\",\"type\":" + _0x244913 + ",\"reqIdx\":" + _0x244760 + ",\"gameId\":\"" + _0x1b7a8d + "\",\"token\":\"" + _0x35bf66 + "\",\"targetServer\":\"onlineB\",\"clientVersion\":\"v1.0.4\"}",
-    "headers": "{\"content-type\":\"application/json;charset=UTF-8\"}",
-    "instance": "INNER",
-    "method": "POST",
-    "options": "{\"cloudAppId\":\"47442\",\"timeout\":3000}",
-    "path": "/api/game/completeOrder",
-    "protocols": "{\"Content-Type\":\"application/json\",\"mc-timestamp\":\"" + _0x1b43f3 + "\",\"mc-env\":\"online\",\"mc-network\":\"WIFI\"}"
+    body:
+      '{"orderQueryId":"' +
+      _0x115188 +
+      '","posArray":' +
+      JSON["stringify"](_0x59c4d3) +
+      ',"customerId":"' +
+      _0x1a1549 +
+      '","type":' +
+      _0x244913 +
+      ',"reqIdx":' +
+      _0x244760 +
+      ',"gameId":"' +
+      _0x1b7a8d +
+      '","token":"' +
+      _0x35bf66 +
+      '","targetServer":"onlineB","clientVersion":"v1.0.4"}',
+    headers: '{"content-type":"application/json;charset=UTF-8"}',
+    instance: "INNER",
+    method: "POST",
+    options: '{"cloudAppId":"47442","timeout":3000}',
+    path: "/api/game/completeOrder",
+    protocols:
+      '{"Content-Type":"application/json","mc-timestamp":"' +
+      _0x1b43f3 +
+      '","mc-env":"online","mc-network":"WIFI"}',
   };
-  let _0x3e174f = await _0x768dee("mtop.miniapp.cloud.application.request", _0x27230d, _0x5ecf44);
+  let _0x3e174f = await _0x768dee(
+    "mtop.miniapp.cloud.application.request",
+    _0x27230d,
+    _0x5ecf44
+  );
   if (_0x3e174f) {
     let _0x9d72de = _0x3e174f["data"];
     if (!_0x9d72de) {
@@ -102,15 +158,29 @@ async function _0x25c58b(_0x4cc044) {
   const _0x15b9ea = new Date()["getTime"]();
   _0x244760++;
   const _0x4a5bfa = {
-    "body": "{\"reqIdx\":" + _0x244760 + ",\"gameId\":\"" + _0x1b7a8d + "\",\"token\":\"" + _0x35bf66 + "\",\"targetServer\":\"onlineB\",\"clientVersion\":\"v1.0.4\"}",
-    "headers": "{\"content-type\":\"application/json;charset=UTF-8\"}",
-    "instance": "INNER",
-    "method": "POST",
-    "options": "{\"cloudAppId\":\"47442\",\"timeout\":3000}",
-    "path": "/onlineB/api/task/getTasksList",
-    "protocols": "{\"Content-Type\":\"application/json\",\"mc-timestamp\":\"" + _0x15b9ea + "\",\"mc-env\":\"online\",\"mc-network\":\"WIFI\"}"
+    body:
+      '{"reqIdx":' +
+      _0x244760 +
+      ',"gameId":"' +
+      _0x1b7a8d +
+      '","token":"' +
+      _0x35bf66 +
+      '","targetServer":"onlineB","clientVersion":"v1.0.4"}',
+    headers: '{"content-type":"application/json;charset=UTF-8"}',
+    instance: "INNER",
+    method: "POST",
+    options: '{"cloudAppId":"47442","timeout":3000}',
+    path: "/onlineB/api/task/getTasksList",
+    protocols:
+      '{"Content-Type":"application/json","mc-timestamp":"' +
+      _0x15b9ea +
+      '","mc-env":"online","mc-network":"WIFI"}',
   };
-  let _0xc27a30 = await _0x768dee("mtop.miniapp.cloud.application.request", _0x4cc044, _0x4a5bfa);
+  let _0xc27a30 = await _0x768dee(
+    "mtop.miniapp.cloud.application.request",
+    _0x4cc044,
+    _0x4a5bfa
+  );
   let _0x2cf1a5 = _0xc27a30["data"];
   if (_0x2cf1a5) {
     try {
@@ -121,8 +191,12 @@ async function _0x25c58b(_0x4cc044) {
           if (_0x282ba3["type"] === 3 && !_0x282ba3["haveGotReward"]) {
             let _0x3b45e1 = await _0x100c7f(_0x4cc044, _0x1eea0c);
             if (_0x3b45e1["data"]) {
-              console["log"]("领取任务奖励完成，当前乐园币", _0x3b45e1["data"]["elemCoin"]);
-            } else {}
+              console["log"](
+                "领取任务奖励完成，当前乐园币",
+                _0x3b45e1["data"]["elemCoin"]
+              );
+            } else {
+            }
           }
         }
       }
@@ -133,29 +207,61 @@ async function _0x100c7f(_0x85b4f3, _0x29751c) {
   const _0x461b55 = new Date()["getTime"]();
   _0x244760++;
   const _0x450a04 = {
-    "body": "{\"taskId\":" + _0x29751c + ",\"taskType\":0,\"reqIdx\":" + _0x244760 + ",\"gameId\":\"" + _0x1b7a8d + "\",\"token\":\"" + _0x35bf66 + "\",\"targetServer\":\"onlineB\",\"clientVersion\":\"v1.0.4\"}",
-    "headers": "{\"content-type\":\"application/json;charset=UTF-8\"}",
-    "instance": "INNER",
-    "method": "POST",
-    "options": "{\"cloudAppId\":\"47442\",\"timeout\":3000}",
-    "path": "/api/task/getTaskAward",
-    "protocols": "{\"Content-Type\":\"application/json\",\"mc-timestamp\":\"" + _0x461b55 + "\",\"mc-env\":\"online\",\"mc-network\":\"WIFI\"}"
+    body:
+      '{"taskId":' +
+      _0x29751c +
+      ',"taskType":0,"reqIdx":' +
+      _0x244760 +
+      ',"gameId":"' +
+      _0x1b7a8d +
+      '","token":"' +
+      _0x35bf66 +
+      '","targetServer":"onlineB","clientVersion":"v1.0.4"}',
+    headers: '{"content-type":"application/json;charset=UTF-8"}',
+    instance: "INNER",
+    method: "POST",
+    options: '{"cloudAppId":"47442","timeout":3000}',
+    path: "/api/task/getTaskAward",
+    protocols:
+      '{"Content-Type":"application/json","mc-timestamp":"' +
+      _0x461b55 +
+      '","mc-env":"online","mc-network":"WIFI"}',
   };
-  return await _0x768dee("mtop.miniapp.cloud.application.request", _0x85b4f3, _0x450a04);
+  return await _0x768dee(
+    "mtop.miniapp.cloud.application.request",
+    _0x85b4f3,
+    _0x450a04
+  );
 }
 async function _0x4338e2(_0x3470b3, _0xf1a2ea) {
   const _0x3bf80f = new Date()["getTime"]();
   _0x244760++;
   const _0x333999 = {
-    "body": "{\"pos\":" + JSON["stringify"](_0xf1a2ea) + ",\"reqIdx\":" + _0x244760 + " ,\"gameId\":\"" + _0x1b7a8d + "\",\"token\":\"" + _0x35bf66 + "\",\"targetServer\":\"onlineB\",\"clientVersion\":\"v1.0.4\"}",
-    "headers": "{\"content-type\":\"application/json;charset=UTF-8\"}",
-    "instance": "INNER",
-    "method": "POST",
-    "options": "{\"cloudAppId\":\"47442\",\"timeout\":3000}",
-    "path": "/onlineB/api/game/cropSell",
-    "protocols": "{\"Content-Type\":\"application/json\",\"mc-timestamp\":\"" + _0x3bf80f + "\",\"mc-env\":\"online\",\"mc-network\":\"WIFI\"}"
+    body:
+      '{"pos":' +
+      JSON["stringify"](_0xf1a2ea) +
+      ',"reqIdx":' +
+      _0x244760 +
+      ' ,"gameId":"' +
+      _0x1b7a8d +
+      '","token":"' +
+      _0x35bf66 +
+      '","targetServer":"onlineB","clientVersion":"v1.0.4"}',
+    headers: '{"content-type":"application/json;charset=UTF-8"}',
+    instance: "INNER",
+    method: "POST",
+    options: '{"cloudAppId":"47442","timeout":3000}',
+    path: "/onlineB/api/game/cropSell",
+    protocols:
+      '{"Content-Type":"application/json","mc-timestamp":"' +
+      _0x3bf80f +
+      '","mc-env":"online","mc-network":"WIFI"}',
   };
-  let _0x13ff62 = await _0x768dee("mtop.miniapp.cloud.application.request", _0x3470b3, _0x333999);
+  let _0x13ff62 = await _0x768dee(
+    "mtop.miniapp.cloud.application.request",
+    _0x3470b3,
+    _0x333999
+  );
   if (_0x13ff62["data"]) {
     for (let _0x173e36 = 0; _0x173e36 < _0xa8f67f["length"]; _0x173e36++) {
       let _0x4818db = _0xa8f67f[_0x173e36];
@@ -169,32 +275,50 @@ async function _0x4338e2(_0x3470b3, _0xf1a2ea) {
 }
 async function _0x768dee(_0xe42167, _0x846f90, _0x3c14d6) {
   const _0x45d61d = {
-    "accept": "application/json",
+    accept: "application/json",
     "content-type": "application/x-www-form-urlencoded",
-    "cookie": _0x846f90,
+    cookie: _0x846f90,
     "x-miniapp-id-taobao": "3000000088680964",
     "x-miniapp-version": "0.0.19",
     "x-mini-appkey": "34351764",
-    "x-miniapp-env": "{\"nbsn\":\"ONLINE\",\"nbsource\":\"online\"}",
+    "x-miniapp-env": '{"nbsn":"ONLINE","nbsource":"online"}',
     "x-req-appkey": "34351764",
     "x-open-biz": "mini-app",
-    "x-open-biz-data": "%7B%22appId%22%3A%223000000088680964%22%2C%22invokerAppId%22%3A%223000000088680964%22%2C%22viaFusionApp%22%3Atrue%7D",
+    "x-open-biz-data":
+      "%7B%22appId%22%3A%223000000088680964%22%2C%22invokerAppId%22%3A%223000000088680964%22%2C%22viaFusionApp%22%3Atrue%7D",
     "x-exttype": "isv_open_api",
-    "appid": "3000000088680964"
+    appid: "3000000088680964",
   };
   const _0x23aac9 = new Date()["getTime"]();
   const _0x11b19f = 34351764;
   const _0x43dafe = "data=" + encodeURIComponent(JSON["stringify"](_0x3c14d6));
   const _0x208fa6 = getToken(_0x846f90);
-  const _0x93d6d4 = _0x208fa6["split"]('_')[0];
-  const _0x8540c0 = md5(_0x93d6d4 + '&' + _0x23aac9 + '&' + _0x11b19f + '&' + JSON["stringify"](_0x3c14d6));
+  const _0x93d6d4 = _0x208fa6["split"]("_")[0];
+  const _0x8540c0 = md5(
+    _0x93d6d4 +
+      "&" +
+      _0x23aac9 +
+      "&" +
+      _0x11b19f +
+      "&" +
+      JSON["stringify"](_0x3c14d6)
+  );
   const _0x2ba191 = {
-    "url": "https://shopping.ele.me/h5/" + _0xe42167 + "/1.0/?jsv=2.6.1&appKey=34351764&t=" + _0x23aac9 + "&sign=" + _0x8540c0 + "&api=" + _0xe42167 + "&v=1.0&type=originaljson&ttid=1608030065155%40eleme_android_11.0.38",
-    "method": "POST",
-    "headers": _0x45d61d,
-    "body": _0x43dafe
+    url:
+      "https://shopping.ele.me/h5/" +
+      _0xe42167 +
+      "/1.0/?jsv=2.6.1&appKey=34351764&t=" +
+      _0x23aac9 +
+      "&sign=" +
+      _0x8540c0 +
+      "&api=" +
+      _0xe42167 +
+      "&v=1.0&type=originaljson&ttid=1608030065155%40eleme_android_11.0.38",
+    method: "POST",
+    headers: _0x45d61d,
+    body: _0x43dafe,
   };
-  return tryCatchPromise(_0x2911df => {
+  return tryCatchPromise((_0x2911df) => {
     _0xd960c1(_0x2ba191, async (_0x2299f1, _0x1cb3ee, _0x4e0376) => {
       if (!_0x2299f1 && _0x1cb3ee["statusCode"] == 200) {
         try {
@@ -245,7 +369,7 @@ async function _0xd42e5(_0x5c2fe9) {
       }
     }
   }
-  Object["keys"](_0x22b780)["forEach"](_0x48b5e7 => {
+  Object["keys"](_0x22b780)["forEach"]((_0x48b5e7) => {
     let _0x1b4b83 = _0x22b780[_0x48b5e7];
     if (_0x1b4b83["seeds"]["length"] > 0) {
       let _0x409985 = _0x3f4a47(_0x1b4b83["queryId"]);
@@ -271,9 +395,15 @@ async function _0x1de15a(_0x313069, _0x1e6599, _0x553533) {
     }
   }
   if (_0x46ed77) {
-    let _0x4ed096 = await _0x54ec17(_0x1e6599, _0x553533["queryId"], _0x4e2c17, _0x553533["customerId"], _0x553533["type"]);
+    let _0x4ed096 = await _0x54ec17(
+      _0x1e6599,
+      _0x553533["queryId"],
+      _0x4e2c17,
+      _0x553533["customerId"],
+      _0x553533["type"]
+    );
     if (_0x4ed096) {
-      console["log"]("完成订单，获得", _0x553533["orderValue"], '金币');
+      console["log"]("完成订单，获得", _0x553533["orderValue"], "金币");
       return 3;
     }
   }
@@ -290,11 +420,11 @@ async function _0x3d9d6b(_0x18112d) {
       let _0x336da4 = _0xa8f67f[_0x103451];
       if (!_0x336da4["cropQueryId"]) {
         const _0x3f3134 = {
-          "producedCrop": {},
-          "type": 2,
-          "pos1": _0x104134["pos"],
-          "pos2": _0x336da4["pos"],
-          "timestamp": new Date()["getTime"]()
+          producedCrop: {},
+          type: 2,
+          pos1: _0x104134["pos"],
+          pos2: _0x336da4["pos"],
+          timestamp: new Date()["getTime"](),
         };
         _0x3f3134["producedCrop"]["queryId"] = _0x1a886c(_0x22b780, 1);
         _0x3f3134["producedCrop"]["cropId"] = _0x104134["seeds"][0];
@@ -328,15 +458,29 @@ async function _0x3ed2e4(_0x5eb131) {
   const _0x190f14 = new Date()["getTime"]();
   _0x244760++;
   const _0x35ecd1 = {
-    "body": "{\"type\":2,\"reqIdx\":" + _0x244760 + ",\"gameId\":\"" + _0x1b7a8d + "\",\"token\":\"" + _0x35bf66 + "\",\"targetServer\":\"onlineB\",\"clientVersion\":\"v1.0.4\"}",
-    "headers": "{\"content-type\":\"application/json;charset=UTF-8\"}",
-    "instance": "INNER",
-    "method": "POST",
-    "options": "{\"cloudAppId\":\"47442\",\"timeout\":3000}",
-    "path": "/onlineB/api/game/refresh",
-    "protocols": "{\"Content-Type\":\"application/json\",\"mc-timestamp\":\"" + _0x190f14 + "\",\"mc-env\":\"online\",\"mc-network\":\"WIFI\"}"
+    body:
+      '{"type":2,"reqIdx":' +
+      _0x244760 +
+      ',"gameId":"' +
+      _0x1b7a8d +
+      '","token":"' +
+      _0x35bf66 +
+      '","targetServer":"onlineB","clientVersion":"v1.0.4"}',
+    headers: '{"content-type":"application/json;charset=UTF-8"}',
+    instance: "INNER",
+    method: "POST",
+    options: '{"cloudAppId":"47442","timeout":3000}',
+    path: "/onlineB/api/game/refresh",
+    protocols:
+      '{"Content-Type":"application/json","mc-timestamp":"' +
+      _0x190f14 +
+      '","mc-env":"online","mc-network":"WIFI"}',
   };
-  let _0x417f26 = await _0x768dee("mtop.miniapp.cloud.application.request", _0x5eb131, _0x35ecd1);
+  let _0x417f26 = await _0x768dee(
+    "mtop.miniapp.cloud.application.request",
+    _0x5eb131,
+    _0x35ecd1
+  );
   return _0x417f26;
 }
 function _0x1c2c8b(_0x46007f) {
@@ -346,7 +490,7 @@ function _0x1c2c8b(_0x46007f) {
     if (_0x3bb85d) {
       let _0x3286eb = _0x22b780[_0x3bb85d];
       if (_0x3286eb) {
-        if (_0x3286eb['id'] === _0x46007f) {
+        if (_0x3286eb["id"] === _0x46007f) {
           return _0x28aa5d;
         }
       }
@@ -365,32 +509,56 @@ function _0x3f4a47(_0x1aea5d) {
 }
 function _0x1a886c(_0x2b3714, _0xecfab1) {
   var _0xa54c9c = _0x40dc91(Date["now"](), Math["random"]());
-  if (!_0x2b3714 || !_0x2b3714[_0xa54c9c] || !_0xecfab1 || _0xecfab1 <= 0) return _0xa54c9c;
+  if (!_0x2b3714 || !_0x2b3714[_0xa54c9c] || !_0xecfab1 || _0xecfab1 <= 0)
+    return _0xa54c9c;
   for (var _0x5c252f = 0; _0x5c252f < _0xecfab1; _0x5c252f++) {
-    if (!_0x2b3714[_0xa54c9c = _0x40dc91(Date["now"](), Math["random"]())]) return _0xa54c9c;
-    console["error"]("generate id failed, retry:" + (_0x5c252f + 1) + '/' + _0xecfab1);
+    if (!_0x2b3714[(_0xa54c9c = _0x40dc91(Date["now"](), Math["random"]()))])
+      return _0xa54c9c;
+    console["error"](
+      "generate id failed, retry:" + (_0x5c252f + 1) + "/" + _0xecfab1
+    );
   }
 }
 function _0x40dc91() {
-  for (var _0x10372a = [], _0x2c7add = 0; _0x2c7add < arguments["length"]; _0x2c7add++) {
+  for (
+    var _0x10372a = [], _0x2c7add = 0;
+    _0x2c7add < arguments["length"];
+    _0x2c7add++
+  ) {
     _0x10372a[_0x2c7add] = arguments[_0x2c7add];
   }
-  return md5(_0x10372a["join"]('+'))["toString"]();
+  return md5(_0x10372a["join"]("+"))["toString"]();
 }
 async function _0x1024fc(_0x2e65b5, _0x3fff1b) {
   await wait(3);
   _0x244760++;
   let _0x2959d6 = JSON["stringify"](_0x3fff1b);
   const _0x2b1d94 = {
-    "body": "{\"cmds\":" + _0x2959d6 + ",\"reqIdx\":" + _0x244760 + ",\"gameId\":\"" + _0x1b7a8d + "\",\"token\":\"" + _0x35bf66 + "\",\"targetServer\":\"onlineB\",\"clientVersion\":\"v1.0.4\"}",
-    "headers": "{\"content-type\":\"application/json;charset=UTF-8\"}",
-    "instance": "INNER",
-    "method": "POST",
-    "options": "{\"cloudAppId\":\"47442\",\"timeout\":3000}",
-    "path": "/onlineB/api/game/cmdExec",
-    "protocols": "{\"Content-Type\":\"application/json\",\"mc-timestamp\":\"" + Date["now"]() + "\",\"mc-env\":\"online\",\"mc-network\":\"NOTREACHABLE\"}"
+    body:
+      '{"cmds":' +
+      _0x2959d6 +
+      ',"reqIdx":' +
+      _0x244760 +
+      ',"gameId":"' +
+      _0x1b7a8d +
+      '","token":"' +
+      _0x35bf66 +
+      '","targetServer":"onlineB","clientVersion":"v1.0.4"}',
+    headers: '{"content-type":"application/json;charset=UTF-8"}',
+    instance: "INNER",
+    method: "POST",
+    options: '{"cloudAppId":"47442","timeout":3000}',
+    path: "/onlineB/api/game/cmdExec",
+    protocols:
+      '{"Content-Type":"application/json","mc-timestamp":"' +
+      Date["now"]() +
+      '","mc-env":"online","mc-network":"NOTREACHABLE"}',
   };
-  let _0x5a38ea = await _0x768dee("mtop.miniapp.cloud.application.request", _0x2e65b5, _0x2b1d94);
+  let _0x5a38ea = await _0x768dee(
+    "mtop.miniapp.cloud.application.request",
+    _0x2e65b5,
+    _0x2b1d94
+  );
   if (_0x5a38ea) {
     let _0x4691e5 = _0x5a38ea["data"];
     if (!_0x4691e5) {
@@ -428,7 +596,7 @@ async function _0x1024fc(_0x2e65b5, _0x3fff1b) {
     }
     let _0x59adef = _0x4691e5["changedCropMap"];
     if (_0x59adef) {
-      Object["keys"](_0x59adef)["forEach"](_0x476275 => {
+      Object["keys"](_0x59adef)["forEach"]((_0x476275) => {
         if (_0x22b780[_0x476275]) {
           if (_0x59adef[_0x476275]["isDelete"]) {
             delete _0x22b780[_0x476275];
@@ -457,11 +625,17 @@ async function _0x2b4a48() {
         }
         let _0x2003d5 = await getUserInfo(_0xa95efd);
         if (!_0x2003d5["username"]) {
-          console["log"]('第', _0x58e74c + 1, "账号失效！请重新登录！！！😭");
+          console["log"]("第", _0x58e74c + 1, "账号失效！请重新登录！！！😭");
           continue;
         }
         const _0x35e63c = _0x2003d5["user_id"];
-        console["log"]("******开始【饿了么账号", _0x58e74c + 1, '】', _0x2003d5["username"], "*********");
+        console["log"](
+          "******开始【饿了么账号",
+          _0x58e74c + 1,
+          "】",
+          _0x2003d5["username"],
+          "*********"
+        );
         let _0x15d4ce = await _0x1d5d09(_0xa95efd);
         if (!_0x15d4ce) {
           console["log"]("请完成实名认证后再来玩游戏");
