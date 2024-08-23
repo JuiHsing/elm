@@ -9,8 +9,6 @@ sh set_elmenv.sh #获取elmck
 
 
 
-
-
 # 延时防黑
 delay=$(( ($RANDOM % 6) + 5 ))
 echo "延时 $delay 秒以防止黑号..."
